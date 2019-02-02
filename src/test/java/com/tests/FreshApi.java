@@ -4,8 +4,8 @@ import api.ApiJson;
 import api.DataProviderStorage;
 import api.schema.CountryCode;
 import base.BaseApiClass;
-import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
@@ -30,7 +30,7 @@ public class FreshApi extends BaseApiClass {
     private static final String GET_ISO_2_CODE = "/get/iso2code/";
 
     @Test(dataProvider = "countryValidation", dataProviderClass = DataProviderStorage.class)
-    @Description("Get each country (US, DE and GB) individually and validate the response")
+    @Story("Get each country (US, DE and GB) individually and validate the response")
     public void shouldRequestWithSeveralCountries(String name, String alfa2Code, String alfa3Code) {
         final String resultsApiJson = countryGetRequest(GET_ISO_2_CODE, alfa2Code);
         final ApiJson apiJson = ApiJson.from(resultsApiJson);
@@ -41,6 +41,7 @@ public class FreshApi extends BaseApiClass {
     }
 
     @Test
+    @Story("Get all countries and validate that US, DE and GB were returned in the response")
     public void shouldRequestWithSeveral() {
         final String resultsApiJson = countriesGetRequest(GET_ALL);
         final ApiJson apiJson = ApiJson.from(resultsApiJson);
@@ -52,7 +53,7 @@ public class FreshApi extends BaseApiClass {
     }
 
     @Test
-    @Description("Get information for non-existent countries and validate the response")
+    @Story("Get information for non-existent countries and validate the response")
     public void shouldRequestWithNonExistentCountry() {
         String nonExistentCountry = "RR";
         RestAssured.given()
@@ -65,7 +66,7 @@ public class FreshApi extends BaseApiClass {
     }
 
     @Test
-    @Description("validate new country addition using POST")
+    @Story("validate new country addition using POST")
     public void shouldPostSpecific_TC() {
         String name = "Test Country";
         String alfa2Code = "TC";
