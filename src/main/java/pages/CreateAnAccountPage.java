@@ -19,7 +19,7 @@ public class CreateAnAccountPage extends CreateAccountPageLocators {
     @Step
     public MyAccountPage fillInPersonalData(String registrationData) {
         PersonProfile json = getJsonData(registrationData);
-        $(MRS_GENDER_RADIO_BOX).click();
+        $(MRS_GENDER_RADIO_BOX).waitUntil(Condition.visible, 2000).click();
         $(CUSTOMER_FIRSTNAME).setValue(json.getFirstName());
         $(CUSTOMER_LASTNAME).setValue(json.getLastName());
         $(CUSTOMER_PASSWD).setValue(json.getPassword());
