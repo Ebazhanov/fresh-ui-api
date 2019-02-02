@@ -1,0 +1,27 @@
+{
+  "gender": "femail",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "JohnDoe@mail.com",
+  "password": "Password2018",
+  "birthday": {
+    "year": "2000",
+    "month": "1",
+    "day": "1"
+  },
+  "addressFirstName": "JohnAdress",
+  "addressLastName": "DoeAdress",
+  "company": "Corp",
+  "address1": "addres1",
+  "address2": "addres2",
+  "country": "United States",
+  "city": "Vladivostok",
+  "stateId": "Alabama",
+  "postcode": "18800",
+  "other": "test",
+  "phone": "12345123123",
+  "phoneMobile": "12345123123",
+  "alias": "test",
+  "submitAccount": "test"
+}
+
