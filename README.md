@@ -1,4 +1,4 @@
-### Done
+### Fresh
 
 - [x] run tests in parallel mode;
 
@@ -12,6 +12,8 @@
 ### Generate Allure report 
 
 ```mvn allure:report```
+
+### Open Allure report in browser
 
 ```mvn allure:serve```
 

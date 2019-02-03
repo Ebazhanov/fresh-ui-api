@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class HomePage {
 
     @Step
-    public AuthenticationPage signInButton(){
+    public AuthenticationPage clickOnLoginButton(){
         $(".login").click();
         return new AuthenticationPage();
     }

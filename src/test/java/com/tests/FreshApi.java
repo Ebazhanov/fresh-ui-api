@@ -66,7 +66,7 @@ public class FreshApi extends BaseApiClass {
     }
 
     @Test
-    @Story("validate new country addition using POST")
+    @Story("Add new Country by using POST request")
     public void shouldPostSpecific_TC() {
         String name = "Test Country";
         String alfa2Code = "TC";

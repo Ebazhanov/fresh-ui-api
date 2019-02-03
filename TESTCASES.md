@@ -1,45 +1,26 @@
-package com.tests;
+# Test Cases
 
-import base.BaseUIClass;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-import org.testng.annotations.Test;
-import pages.HomePage;
+#### Task #1 - Refactoring UI tests
 
-@Feature("Main functionality")
-public class WebTest extends BaseUIClass {
-
-    private static final String JOE_BLACK = "Joe Black";
-    private String existingUserEmail = "hf_challenge_123456@hf123456.com";
-    private String existingUserPassword = "12345678";
-
-    @Test
-    @Story("Check registration of a new customer ")
-    public void signInTest() {
-        new HomePage()
+##### @STEPS ("Check registration of a new customer)
+    public void signInTest() 
                 .clickOnLoginButton()
                 .enterRandomEmailInAccountBlock()
                 .creatAnAccountButton()
                 .fillInPersonalData("PersonalData")
                 .verificationForSuccessLogin();
-    }
-
-    @Test
-    @Story("Check login with existing Customer")
-    public void logInTest() {
-        new HomePage()
+    
+##### @STEPS ("Check login with existing Customer")
+    public void logInTest() 
                 .clickOnLoginButton()
                 .enterExistingEmail(existingUserEmail)
                 .enterExistingPassword(existingUserPassword)
                 .clickSignInButton()
                 .verifyFirstLastName(JOE_BLACK)
                 .verificationForSuccessLogin();
-    }
-
-    @Test
-    @Story("Proceed to Order confirmation page")
+    
+##### @STEPS ("Proceed to Order confirmation page")
     public void checkoutTest() {
-        new HomePage()
                 .clickOnLoginButton()
                 .enterExistingEmail(existingUserEmail)
                 .enterExistingPassword(existingUserPassword)
@@ -51,6 +32,16 @@ public class WebTest extends BaseUIClass {
                 .registrateProduct()
                 .clickOnConfirmOrderButton()
                 .verifyOrderConfirmationDetails();
-    }
+   
+#### Task 2 - API tests
 
-}
+##### @TEST #1
+```Get all countries and validate that US, DE and GB were returned in the response```
+##### @TEST #2 
+```Get each country (US, DE and GB) individually and validate the response```
+##### @TEST #3
+```Get information for inexistent countries and validate the response```
+##### @TEST #4
+```Add new Country by using POST request```
+
+
