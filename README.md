@@ -1,4 +1,15 @@
-### Fresh
+## Fresh
+
+### Set up
+
+You will need the following technologies available to try it out:
+* Git
+* Maven 3+
+* JDK 8
+* IDE of your choice 
+* Web browser Chrome
+
+### Ho w to run
 
 - [x] run tests in parallel mode;
 
